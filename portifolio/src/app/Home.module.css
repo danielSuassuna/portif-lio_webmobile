@@ -1,0 +1,99 @@
+/* pages/Home.module.css */
+
+/* Importando fonte Inter do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+  font-family: 'Inter', sans-serif;
+  padding: 2rem;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 3rem 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #1e293b; /* Azul-escuro elegante */
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: #64748b; /* Cinza azulado */
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #334155;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.description strong {
+  color: #2563eb; /* Azul forte para palavras-chave */
+}
+
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #1e40af;
+}
+
+.contactInfo {
+  font-size: 1rem;
+  color: #475569;
+  margin-top: 1.5rem;
+  line-height: 1.6;
+}
+
+.contactInfo strong {
+  color: #1e293b;
+}
+
+.forma{
+  display: flex;
+  flex-direction: column;
+}
+
+.forca {
+  margin-top: 10px;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #bdc3c7; /* Cinza claro */
+  color: #2c3e50;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  max-width: 200px;
+  transition: background-color 0.3s ease;
+}
+
+.forca:hover {
+  background-color: #95a5a6;
+}

@@ -1,0 +1,102 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* <-- ESSENCIAL */
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #fefefe;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+
+.titulo {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.instrucao {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.palavraContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.letraPalavra {
+  border-bottom: 3px solid #333;
+  width: 30px;
+  height: 40px;
+  margin: 5px;
+  font-size: 24px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.status {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+.erros {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.tentativas {
+  color: #2980b9;
+  font-weight: bold;
+}
+
+.mensagemFinal {
+  margin-top: 20px;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.vitoria {
+  color: #2ecc71;
+}
+
+.derrota {
+  color: #e74c3c;
+}
+
+.botao {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #2c3e50;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  max-width: 200px;
+  transition: 0.3s ease;
+}
+
+.botaoVoltar {
+  margin-top: 10px;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #bdc3c7; /* Cinza claro */
+  color: #2c3e50;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  max-width: 200px;
+  transition: background-color 0.3s ease;
+}
+
+.botaoVoltar:hover {
+  background-color: #95a5a6;
+}
