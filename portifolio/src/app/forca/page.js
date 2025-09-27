@@ -4,7 +4,39 @@ import React, { useState, useEffect } from 'react';
 import styles from './forca.module.css';
 import Link from 'next/link';
 
-const palavras = ['javascript', 'computador', 'programacao', 'inteligencia', 'algoritmo', 'histopatologia'];
+const palavras = [
+  'javascript',
+  'computador',
+  'programacao',
+  'inteligencia',
+  'algoritmo',
+  'histopatologia',
+  'internet',
+  'python',
+  'ciencia',
+  'dados',
+  'rede',
+  'hardware',
+  'software',
+  'processador',
+  'memoria',
+  'machinelearning',
+  'neural',
+  'deep',
+  'treinamento',
+  'modelo',
+  'classificacao',
+  'regressao',
+  'token',
+  'dataset',
+  'nuvem',
+  'compilador',
+  'framework',
+  'frontend',
+  'backend',
+  'robótica'
+];
+
 
 const Forca = () => {
   const [palavra, setPalavra] = useState('');
