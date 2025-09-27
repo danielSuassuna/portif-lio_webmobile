@@ -37,6 +37,8 @@ const palavras = [
   'robótica'
 ];
 
+// Alfabeto para o teclado virtual
+const alfabeto = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
 const Forca = () => {
   const [palavra, setPalavra] = useState('');
@@ -60,20 +62,27 @@ const Forca = () => {
     setMensagemFinal('');
   };
 
-  const handleTecla = (e) => {
-    const letra = e.key.toLowerCase();
-    if (jogoEncerrado || !letra.match(/[a-z]/i)) return;
+  const processarLetra = (letra) => {
+    if (jogoEncerrado) return;
+
+    letra = letra.toLowerCase();
+    if (!letra.match(/^[a-z]$/i)) return; // só letras a-z
 
     if (palavra.includes(letra)) {
       if (!letrasCorretas.includes(letra)) {
-        setLetrasCorretas([...letrasCorretas, letra]);
+        setLetrasCorretas((prev) => [...prev, letra]);
       }
     } else {
       if (!letrasErradas.includes(letra)) {
-        setLetrasErradas([...letrasErradas, letra]);
+        setLetrasErradas((prev) => [...prev, letra]);
         setTentativasRestantes((prev) => prev - 1);
       }
     }
+  };
+
+  // Teclado físico
+  const handleTecla = (e) => {
+    processarLetra(e.key);
   };
 
   useEffect(() => {
@@ -84,20 +93,20 @@ const Forca = () => {
   });
 
   useEffect(() => {
-  if (!palavra) return; // Aguarda a palavra ser definida
+    if (!palavra) return; // Aguarda a palavra ser definida
 
-  const palavraCompleta = palavra.split('').every((letra) => letrasCorretas.includes(letra));
+    const palavraCompleta = palavra.split('').every((letra) => letrasCorretas.includes(letra));
 
-  if (palavraCompleta) {
-    setMensagemFinal('🎉 Parabéns! Você venceu!');
-    setJogoEncerrado(true);
-  }
+    if (palavraCompleta) {
+      setMensagemFinal('🎉 Parabéns! Você venceu!');
+      setJogoEncerrado(true);
+    }
 
-  if (tentativasRestantes === 0) {
-    setMensagemFinal(`💀 Você perdeu! A palavra era "${palavra}".`);
-    setJogoEncerrado(true);
-  }
-}, [letrasCorretas, letrasErradas, tentativasRestantes, palavra]);
+    if (tentativasRestantes === 0) {
+      setMensagemFinal(`💀 Você perdeu! A palavra era "${palavra}".`);
+      setJogoEncerrado(true);
+    }
+  }, [letrasCorretas, letrasErradas, tentativasRestantes, palavra]);
 
   const renderPalavra = () => {
     return palavra.split('').map((letra, index) => (
@@ -110,7 +119,7 @@ const Forca = () => {
   return (
     <div className={styles.container}>
       <h1 className={styles.titulo}>🪓 Jogo da Forca</h1>
-      <p className={styles.instrucao}>Digite letras no teclado para adivinhar a palavra.</p>
+      <p className={styles.instrucao}>Digite letras no teclado ou toque nas letras abaixo para adivinhar a palavra.</p>
 
       <div className={styles.palavraContainer}>{renderPalavra()}</div>
 
@@ -123,6 +132,27 @@ const Forca = () => {
         <strong>Tentativas restantes:</strong>{' '}
         <span className={styles.tentativas}>{tentativasRestantes}</span>
       </p>
+
+      {/* Teclado virtual */}
+      <div className={styles.teclado}>
+        {alfabeto.map((letra) => (
+          <button
+            key={letra}
+            onClick={() => processarLetra(letra)}
+            disabled={letrasCorretas.includes(letra) || letrasErradas.includes(letra) || jogoEncerrado}
+            className={`${styles.tecla} ${
+              letrasCorretas.includes(letra)
+                ? styles.teclaCorreta
+                : letrasErradas.includes(letra)
+                ? styles.teclaErrada
+                : ''
+            }`}
+            aria-label={`Letra ${letra.toUpperCase()}`}
+          >
+            {letra.toUpperCase()}
+          </button>
+        ))}
+      </div>
 
       {mensagemFinal && (
         <div
@@ -138,11 +168,11 @@ const Forca = () => {
         <button onClick={iniciarNovoJogo} className={styles.botao}>
           🔁 Jogar novamente
         </button>
-        
       )}
+
       <Link href="./">
-          <button className={styles.botaoVoltar}>Voltar</button>
-        </Link>
+        <button className={styles.botaoVoltar}>Voltar</button>
+      </Link>
     </div>
   );
 };

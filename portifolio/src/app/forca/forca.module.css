@@ -100,3 +100,110 @@
 .botaoVoltar:hover {
   background-color: #95a5a6;
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  .titulo {
+    font-size: 2rem;
+  }
+
+  .instrucao {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .letraPalavra {
+    width: 26px;
+    height: 36px;
+    font-size: 20px;
+    margin: 4px;
+  }
+
+  .mensagemFinal {
+    font-size: 1.2rem;
+  }
+
+  .botao,
+  .botaoVoltar {
+    font-size: 15px;
+    padding: 10px 20px;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .titulo {
+    font-size: 1.6rem;
+  }
+
+  .instrucao {
+    font-size: 0.95rem;
+  }
+
+  .letraPalavra {
+    width: 22px;
+    height: 32px;
+    font-size: 18px;
+    margin: 3px;
+  }
+
+  .status {
+    font-size: 1rem;
+  }
+
+  .mensagemFinal {
+    font-size: 1rem;
+  }
+
+  .botao,
+  .botaoVoltar {
+    font-size: 14px;
+    padding: 10px 18px;
+  }
+}
+
+.teclado {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.tecla {
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  border: 1px solid #888;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+
+.tecla:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.tecla:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.teclaCorreta {
+  background-color: #34d399; /* verde */
+  color: white;
+  border-color: #059669;
+}
+
+.teclaErrada {
+  background-color: #f87171; /* vermelho */
+  color: white;
+  border-color: #b91c1c;
+}
+

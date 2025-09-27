@@ -65,3 +65,26 @@
   max-width: 900px;
   margin: 0 auto;
 }
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets e telas médias */
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr; /* 1 coluna em celulares */
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .main {
+    padding: 2rem 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+}

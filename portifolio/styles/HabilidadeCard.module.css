@@ -31,3 +31,42 @@
   color: #475569;
   line-height: 1.4;
 }
+
+@media (max-width: 768px) {
+  .card {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  .image {
+    width: 120px;
+    height: 80px;
+  }
+
+  .title {
+    font-size: 1.1rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 1.2rem;
+  }
+
+  .image {
+    width: 100px;
+    height: 70px;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+}

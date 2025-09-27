@@ -4,22 +4,73 @@
   min-height: 100vh;
   font-family: 'Inter', sans-serif;
   text-align: center;
-  margin-top:50px;
+  margin-top: 50px;
   border-radius: 12px;
+  box-sizing: border-box;
 }
 
+/* Use flexbox para alinhar título se precisar */
 .title {
   font-size: 2.5rem;
   font-weight: 700;
   color: #1e293b;
   margin-bottom: 3rem;
+  padding: 0 1rem;
+  word-break: break-word; /* evita overflow do texto */
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: 1fr; /* uma coluna por padrão (mobile first) */
   gap: 2rem;
   justify-items: center;
   max-width: 1000px;
   margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+/* Ajuste para cards ficarem 100% na largura do grid cell */
+.grid > * {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Media Queries */
+
+/* Extra pequena */
+@media (max-width: 320px) {
+  .title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .main {
+    padding: 2rem 1rem;
+  }
+}
+
+/* Pequena */
+@media (max-width: 600px) {
+  .title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .main {
+    padding: 3rem 1.5rem;
+  }
+}
+
+/* Média */
+@media (max-width: 900px) {
+  .main {
+    padding: 3rem 2rem;
+  }
 }

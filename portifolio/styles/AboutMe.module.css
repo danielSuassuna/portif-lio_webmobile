@@ -25,3 +25,33 @@
   line-height: 1.8;
   margin-bottom: 1.2rem;
 }
+
+@media (max-width: 768px) {
+  .aboutSection {
+    padding: 2rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .text {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutSection {
+    padding: 1.5rem 1rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
